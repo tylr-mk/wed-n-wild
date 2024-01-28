@@ -1,0 +1,46 @@
+---
+// import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+const {frontmatter} = Astro.props;
+
+---
+
+<Layout title={`${frontmatter.title}`}>
+  <Header />
+  <Main pageTitle={`${frontmatter.title} - Under Construction`} pageDesc={frontmatter.description}>
+	<div class="wrapper" class="font-sans">
+        <slot />
+    </div>
+  </Main>
+  <Footer />
+</Layout>
+
+ <style>
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+
+    }
+   .pagination-wrapper {
+     @apply mb-8 mt-auto flex justify-center;
+   }
+   .disabled {
+     @apply pointer-events-none select-none opacity-50;
+   }
+   {
+    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+  }
+  h2 {
+    @apply text-xl font-semibold sm:text-2xl;
+  }
+  p {
+    @apply mb-6 mt-2;
+  }
+  .wrapper {
+    max-width: 600px;
+  }
+</style>

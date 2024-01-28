@@ -1,0 +1,25 @@
+grouping = {
+  attendees = [],
+}
+
+attendee = {
+  name = ,
+  email = ,
+  age = ,
+  grouping = ,
+}
+
+event = {
+  location = ,
+}
+
+invite = {
+  event = ,
+  rsvp = ,
+  attendee = ,
+}
+
+dining = {
+  food_order = ,
+  table = ,    
+}
